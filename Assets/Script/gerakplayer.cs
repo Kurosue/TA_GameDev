@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 public class gerakplayer : MonoBehaviour
 {
+    public GameObject truk;
     public int score = 0;
     public float kecepatan = 5f;
     public float leftBound; // Batas kiri
@@ -22,8 +24,9 @@ public class gerakplayer : MonoBehaviour
     {
         tabrak = Physics2D.OverlapCircle(deteksiTabrak.position, jangkauan, targetLayer);
         if (tabrak){
-               print("terjadi tabrakan!");
-            }  
+            Invoke("Disableblink", 0f);
+            Invoke("Enableblink", 0.01f);
+    }
         hitungskor();
         gerakhorizontal();  
     }
@@ -40,5 +43,11 @@ public class gerakplayer : MonoBehaviour
             score++;
             timerskor = 0;
         }
+    }
+    void Enableblink(){
+        truk.SetActive(true);
+    }
+    void Disableblink(){
+        truk.SetActive(false);
     }
 }
