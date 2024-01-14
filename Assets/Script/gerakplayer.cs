@@ -21,9 +21,6 @@ public class gerakplayer : MonoBehaviour
     void Update()
     {
         tabrak = Physics2D.OverlapCircle(deteksiTabrak.position, jangkauan, targetLayer);
-        if (tabrak){
-               print("terjadi tabrakan!");
-            }  
         hitungskor();
         gerakhorizontal();  
     }
