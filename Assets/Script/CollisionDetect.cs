@@ -10,7 +10,7 @@ public class CollisionDetect : MonoBehaviour
     private float _timer = 0f;
     private float _timeDuration = 5f;
 
-    public TextManager _textManager;
+    public GameManager _gameManager;
     void Start()
     {
         
@@ -40,7 +40,7 @@ public class CollisionDetect : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
-            _textManager._coinCount += 1f;
+            _gameManager._coinCount += 1f;
         }
     }
 
@@ -49,9 +49,7 @@ public class CollisionDetect : MonoBehaviour
         _playerHP--;
         if (_playerHP <= 0)
         {
-            _trackScript.kecepatan = 0f;
-            _trackScript.percepatan = 0f;
-            _trackScript.perubahanpercepatan = 0f;
+            _gameManager._gas = false;
         }
     }
 

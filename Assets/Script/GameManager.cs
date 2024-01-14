@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public Text _scoreText;
     public Text _coinText;
@@ -14,6 +14,8 @@ public class TextManager : MonoBehaviour
     public tracka _trackScript;
     public float _coinCount = 0f;
 
+    public bool _gas = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,15 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _score += _trackScript.kecepatan * Time.deltaTime;
+        if(_gas)
+        {
+            _score += _trackScript.kecepatan * Time.deltaTime;
+        }
         _scoreText.text = "score: " + (int)_score;
         if( _score > _hiScore){
             _hiScore = _score;
             PlayerPrefs.SetFloat("HighScore", _hiScore);
+            PlayerPrefs.Save();
         }
 
         _coinText.text = "" + _coinCount;

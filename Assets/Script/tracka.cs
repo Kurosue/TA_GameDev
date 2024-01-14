@@ -47,6 +47,7 @@ public class tracka : MonoBehaviour
     private int randomTrackIndexatas;
     private int randomTrackIndexbawah;
 
+    public GameManager _gameManager;
     void Start()
     {
         gameObjects = new List<GameObject> {track1, track2, track3, track4, track5, track6, track7, track8, trackawal};
@@ -60,6 +61,8 @@ public class tracka : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (_gameManager._gas)
+        {
         tambahcepat();
         geraktrack();
         if (transform.position.y <= batasbawah){
@@ -75,6 +78,7 @@ public class tracka : MonoBehaviour
         }
         if (pohonkananbawah.transform.position.y <=destroypohony){
             Respawnpohonbawah(respawnypohon);
+        }
         }
     }
     void Respawntrackatas(int randomTrackIndexatas)
@@ -122,5 +126,6 @@ public class tracka : MonoBehaviour
         randompohonIndexkiribawah = Random.Range(0,3);
         pohonkananbawah = Instantiate(pohonObject[randompohonIndexkananbawah], new Vector3(xpohonkanan,respawnypohon ,0f), Quaternion.identity);
         pohonkiribawah = Instantiate(pohonObject[randompohonIndexkiribawah], new Vector3(xpohonkiri,respawnypohon ,0f), Quaternion.identity);
+    
     }
 }
