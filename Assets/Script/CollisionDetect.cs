@@ -12,6 +12,8 @@ public class CollisionDetect : MonoBehaviour
 
     public GameManager _gameManager;
 
+    public gerakperampok _gerakperampok;
+    
     void Start()
     {
         
@@ -29,13 +31,14 @@ public class CollisionDetect : MonoBehaviour
             }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Obstacle"))
         {
             Destroy(other.gameObject);
             _trackScript.kecepatan = 1f;
             ObstacleCollision();
+            _gerakperampok.isTrigger();
         }
 
         if (other.CompareTag("Coin"))

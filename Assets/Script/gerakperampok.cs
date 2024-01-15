@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gerakperampok: MonoBehaviour
+public class gerakperampok : MonoBehaviour
 {
     public Transform originalPosition;
     public Transform forwardPosition;
@@ -11,62 +11,49 @@ public class gerakperampok: MonoBehaviour
 
     private bool isMovingForward = false;
 
-    void Start()
+    void FixedUpdate()
     {
-        // Start by moving all "Perampok" objects to the return position
-        MoveAllPerampokObjects(originalPosition.position);
+        Vector2 a = transform.position;
+        Vector2 b = originalPosition.position;
+        transform.position = Vector2.Lerp(a,b,returnSpeed);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void isTrigger()
     {
-        if (other.CompareTag("Obstacle") && other.CompareTag("Player"))
-        {
             isMovingForward = true;
-        }
     }
 
-    void Update()
+    public void Update()
     {
         if (isMovingForward)
         {
-            MoveAllPerampokObjects(forwardPosition.position);
+            MoveToForwardPosition();
         }
     }
 
-    void MoveAllPerampokObjects(Vector3 targetPosition)
+    public  void MoveToForwardPosition()
     {
-        // Find all GameObjects with the "Perampok" tag
-        GameObject[] perampokObjects = GameObject.FindGameObjectsWithTag("Perampok");
+        // Move towards the forward position
+        transform.position = Vector3.MoveTowards(transform.position, forwardPosition.position, moveSpeed * Time.deltaTime);
 
-        // Move each "Perampok" GameObject
-        foreach (GameObject perampokObject in perampokObjects)
-        {
-            MovePerampokObject(perampokObject.transform, targetPosition);
-        }
-    }
-
-    void MovePerampokObject(Transform perampokTransform, Vector3 targetPosition)
-    {
-        // Move towards the target position
-        perampokTransform.position = Vector3.MoveTowards(perampokTransform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-        // Check if reached the target position with a small threshold
-        if (Vector3.Distance(perampokTransform.position, targetPosition) < 0.01f)
+        // Check if reached the forward position with a small threshold
+        if (Vector3.Distance(transform.position, forwardPosition.position) < 0.01f)
         {
             // If reached, return to the original position
-            ReturnToOriginalPosition(perampokTransform);
+            ReturnToOriginalPosition();
         }
     }
 
-    void ReturnToOriginalPosition(Transform perampokTransform)
+    public void ReturnToOriginalPosition()
     {
         // Return to the original position
-        perampokTransform.position = Vector3.MoveTowards(perampokTransform.position, originalPosition.position, returnSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, originalPosition.position, returnSpeed * Time.deltaTime);
 
         // Check if reached the original position with a small threshold
-        if (Vector3.Distance(perampokTransform.position, originalPosition.position) < 0.01f)
+        if (Vector3.Distance(transform.position, originalPosition.position) < 0.01f)
         {
             isMovingForward = false;
         }
     }
 }
+
