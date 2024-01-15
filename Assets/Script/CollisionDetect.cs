@@ -11,7 +11,7 @@ public class CollisionDetect : MonoBehaviour
     private float _timeDuration = 5f;
 
     public GameManager _gameManager;
-    public gerakperampok _gerakperampok;
+
     void Start()
     {
         
@@ -36,7 +36,6 @@ public class CollisionDetect : MonoBehaviour
             Destroy(other.gameObject);
             _trackScript.kecepatan = 1f;
             ObstacleCollision();
-            _gerakperampok.MoveForward();
         }
 
         if (other.CompareTag("Coin"))
