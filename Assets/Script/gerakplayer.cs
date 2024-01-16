@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 public class gerakplayer : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class gerakplayer : MonoBehaviour
     public float rightBound; // Batas kanan
     Rigidbody2D rb;
     public GameManager _gameManager;
-    public float _rotationSpeed = 200f;
 
     void Start()
     {
@@ -31,7 +31,6 @@ public class gerakplayer : MonoBehaviour
         rb.velocity = new Vector2(movement.x * kecepatan, rb.velocity.y);   
         float clampedX = Mathf.Clamp(rb.position.x, leftBound, rightBound); 
         rb.position = new Vector2(clampedX, rb.position.y);
-
 
     }
 }
