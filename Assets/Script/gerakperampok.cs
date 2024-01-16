@@ -60,12 +60,18 @@ public class gerakperampok : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             animator.SetBool("IsJumping",true);
-        }
-        else
-        {
-            animator.SetBool("IsJumping",false);
+            Debug.Log("Enter");
         }
      }
+    
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            animator.SetBool("IsJumping",false);
+            Debug.Log("Exit");
+        }
+    }
 }
 
 
