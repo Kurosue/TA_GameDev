@@ -10,6 +10,9 @@ public class gerakperampok : MonoBehaviour
     public float returnSpeed = 0.5f;
 
     private bool isMovingForward = false;
+    private float returnDelay = 5f;
+    private float returnTimer = 0f;
+
 
     void FixedUpdate()
     {
@@ -31,29 +34,37 @@ public class gerakperampok : MonoBehaviour
         }
     }
 
-    public  void MoveToForwardPosition()
+    public void MoveToForwardPosition()
     {
         // Move towards the forward position
         transform.position = Vector3.MoveTowards(transform.position, forwardPosition.position, moveSpeed * Time.deltaTime);
 
-        // Check if reached the forward position with a small threshold
+        // Check if almost at the forward position
         if (Vector3.Distance(transform.position, forwardPosition.position) < 0.01f)
         {
-            // If reached, return to the original position
-            ReturnToOriginalPosition();
+            // If almost at the forward position, set the position directly to avoid overshooting
+            transform.position = forwardPosition.position;
+
+            // Start returning to the original position
+            isMovingForward = false;
         }
     }
 
     public void ReturnToOriginalPosition()
     {
-        // Return to the original position
+        // Move towards the original position
         transform.position = Vector3.MoveTowards(transform.position, originalPosition.position, returnSpeed * Time.deltaTime);
 
-        // Check if reached the original position with a small threshold
+        // Check if almost at the original position
         if (Vector3.Distance(transform.position, originalPosition.position) < 0.01f)
         {
+            // If almost at the original position, set the position directly to avoid overshooting
+            transform.position = originalPosition.position;
+
+            // Stop returning to the original position
             isMovingForward = false;
         }
     }
+
 }
 
