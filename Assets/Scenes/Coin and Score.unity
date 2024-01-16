@@ -262,8 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {fileID: 651960923}
   forwardPosition: {fileID: 1361017367}
-  moveSpeed: 0.8
-  returnSpeed: 0.004
+  moveSpeed: 1
+  returnSpeed: 0.006
 --- !u!1 &241064171
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +482,8 @@ MonoBehaviour:
   _playerHP: 2
   _trackScript: {fileID: 2104527872}
   _gameManager: {fileID: 1603729223}
-  _gerakperampok: {fileID: 0}
+  _gerakperampok: {fileID: 235005024}
+  _perampok: {fileID: 158626920}
 --- !u!1 &439568470
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,8 +813,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {fileID: 800717189}
   forwardPosition: {fileID: 1864593067}
-  moveSpeed: 0.8
-  returnSpeed: 0.004
+  moveSpeed: 1
+  returnSpeed: 0.006
 --- !u!1 &1129034929
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,8 +914,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {fileID: 241064172}
   forwardPosition: {fileID: 2038112208}
-  moveSpeed: 0.8
-  returnSpeed: 0.004
+  moveSpeed: 1
+  returnSpeed: 0.006
 --- !u!1 &1195158343
 GameObject:
   m_ObjectHideFlags: 0
