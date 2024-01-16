@@ -10,6 +10,11 @@ public class CollisionDetect : MonoBehaviour
     private float _timer = 0f;
     private float _timeDuration = 5f;
 
+    public GameManager _gameManager;
+
+    public gerakperampok _gerakperampok;
+    public GameObject _perampok;
+    
     void Start()
     {
         
@@ -34,6 +39,13 @@ public class CollisionDetect : MonoBehaviour
             Destroy(other.gameObject);
             _trackScript.kecepatan = 1f;
             ObstacleCollision();
+            GameObject[] perampoks = GameObject.FindGameObjectsWithTag("Perampok");
+
+            foreach (GameObject perampok in perampoks)
+            {
+                perampok.GetComponent<gerakperampok>().isTrigger();
+            }
+
 
         }
 
