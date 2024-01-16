@@ -79,10 +79,6 @@ public class tracka : MonoBehaviour
             Destroy(pohonkananbawah);
             Respawnpohonbawah(respawnypohon);
         }
-        if(gerakplayer.tabrak == true){
-            kecepatan = kecepatanawal;
-            percepatan = percepatanawal;
-        }
     }
     void Respawntrackatas(int randomTrackIndexatas)
     {
