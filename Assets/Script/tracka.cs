@@ -45,6 +45,7 @@ public class tracka : MonoBehaviour
     public float nyawa;
     private int randomTrackIndexatas;
     private int randomTrackIndexbawah;
+    public GameManager _jalan;
 
     void Start()
     {
@@ -57,7 +58,8 @@ public class tracka : MonoBehaviour
     }
     void FixedUpdate()
     {
-        tambahcepat();
+        if(_jalan._gas)
+        {tambahcepat();
         geraktrack();
         if (trackatas.transform.position.y <= batasbawah){
             Destroy(trackatas);
@@ -78,7 +80,7 @@ public class tracka : MonoBehaviour
             Destroy(pohonkiribawah);
             Destroy(pohonkananbawah);
             Respawnpohonbawah(respawnypohon);
-        }
+        }}
     }
     void Respawntrackatas(int randomTrackIndexatas)
     {

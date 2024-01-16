@@ -8,6 +8,7 @@ public class gerakplayer : MonoBehaviour
     public float leftBound; // Batas kiri
     public float rightBound; // Batas kanan
     Rigidbody2D rb;
+    public GameManager _gameManager;
 
     void Start()
     {
@@ -15,9 +16,14 @@ public class gerakplayer : MonoBehaviour
     }
     void Update()
     {
-
-    }
-
+        if(_gameManager._gas)
+        {    
+            gerakhorizontal();  
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
     }
     void gerakhorizontal(){
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -25,6 +31,6 @@ public class gerakplayer : MonoBehaviour
         rb.velocity = new Vector2(movement.x * kecepatan, rb.velocity.y);   
         float clampedX = Mathf.Clamp(rb.position.x, leftBound, rightBound); 
         rb.position = new Vector2(clampedX, rb.position.y);
-    }
 
+    }
 }
