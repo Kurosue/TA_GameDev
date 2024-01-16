@@ -39,12 +39,14 @@ public class CollisionDetect : MonoBehaviour
             Destroy(other.gameObject);
             _trackScript.kecepatan = 1f;
             ObstacleCollision();
-            // GameObject[] perampoks = _perampok.FindGameObjectWithTag("Perampok");
+            GameObject[] perampoks = GameObject.FindGameObjectsWithTag("Perampok");
 
-            // foreach (GameObject perampok in perampoks)
-            // {
-            //     _perampok.GetComponent<gerakperampok>.isTrigger();
-            // }
+            foreach (GameObject perampok in perampoks)
+            {
+                perampok.GetComponent<gerakperampok>().isTrigger();
+            }
+
+
         }
 
         if (other.CompareTag("Coin"))

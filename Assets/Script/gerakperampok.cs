@@ -10,9 +10,6 @@ public class gerakperampok : MonoBehaviour
     public float returnSpeed = 0.5f;
 
     private bool isMovingForward = false;
-    private float returnDelay = 5f;
-    private float returnTimer = 0f;
-
 
     void FixedUpdate()
     {
@@ -67,4 +64,3 @@ public class gerakperampok : MonoBehaviour
     }
 
 }
-
