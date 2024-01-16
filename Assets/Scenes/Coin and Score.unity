@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 235005024}
   - component: {fileID: 235005026}
   - component: {fileID: 235005025}
+  - component: {fileID: 235005027}
   m_Layer: 0
   m_Name: perampok1
   m_TagString: Perampok
@@ -266,7 +267,8 @@ MonoBehaviour:
   forwardPosition: {fileID: 1361017367}
   moveSpeed: 1
   returnSpeed: 0.006
-  delayTime: 3
+  delayTime: 5
+  animator: {fileID: 235005027}
 --- !u!50 &235005025
 Rigidbody2D:
   serializedVersion: 4
@@ -313,7 +315,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.04, y: 0.08}
+    - - {x: -0.052901544, y: 0.08774093}
       - {x: -0.07, y: 0.04}
       - {x: -0.06999999, y: -0.0015451168}
       - {x: -0.07, y: -0.01}
@@ -321,7 +323,28 @@ PolygonCollider2D:
       - {x: 0.03, y: -0.08}
       - {x: 0.06, y: -0.01}
       - {x: 0.06, y: 0.03}
-      - {x: -0.009303302, y: 0.12395494}
+      - {x: -0.001562376, y: 0.1394368}
+--- !u!95 &235005027
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235005021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8a20441bc84cee489c48dd0a145f225, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &241064171
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +807,7 @@ GameObject:
   - component: {fileID: 1013202428}
   - component: {fileID: 1013202430}
   - component: {fileID: 1013202429}
+  - component: {fileID: 1013202431}
   m_Layer: 0
   m_Name: perampok2
   m_TagString: Perampok
@@ -874,7 +898,8 @@ MonoBehaviour:
   forwardPosition: {fileID: 1864593067}
   moveSpeed: 1
   returnSpeed: 0.006
-  delayTime: 3
+  delayTime: 5
+  animator: {fileID: 1013202431}
 --- !u!50 &1013202429
 Rigidbody2D:
   serializedVersion: 4
@@ -921,14 +946,35 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.04, y: 0.08}
+    - - {x: -0.05806221, y: 0.08516061}
       - {x: -0.07, y: 0.04}
       - {x: -0.07, y: -0.01}
       - {x: -0.04, y: -0.08}
       - {x: 0.03, y: -0.08}
       - {x: 0.06, y: -0.01}
       - {x: 0.06, y: 0.03}
-      - {x: -0.012966206, y: 0.12029202}
+      - {x: -0.0078055887, y: 0.15125574}
+--- !u!95 &1013202431
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013202425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71a2ee124d05af3418a07a0c8da1a973, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1129034929
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +988,7 @@ GameObject:
   - component: {fileID: 1129034932}
   - component: {fileID: 1129034934}
   - component: {fileID: 1129034933}
+  - component: {fileID: 1129034935}
   m_Layer: 0
   m_Name: perampok3
   m_TagString: Perampok
@@ -1032,7 +1079,8 @@ MonoBehaviour:
   forwardPosition: {fileID: 2038112208}
   moveSpeed: 1
   returnSpeed: 0.006
-  delayTime: 3
+  delayTime: 5
+  animator: {fileID: 1129034935}
 --- !u!50 &1129034933
 Rigidbody2D:
   serializedVersion: 4
@@ -1079,7 +1127,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.04, y: 0.08}
+    - - {x: -0.03048388, y: 0.092187904}
       - {x: -0.07, y: 0.04}
       - {x: -0.07, y: -0.01}
       - {x: -0.04, y: -0.08}
@@ -1089,7 +1137,28 @@ PolygonCollider2D:
       - {x: 0.06, y: -0.01}
       - {x: 0.060000006, y: -0.0015451168}
       - {x: 0.06, y: 0.03}
-      - {x: -0.009303287, y: 0.12395494}
+      - {x: -0.004142669, y: 0.13169578}
+--- !u!95 &1129034935
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129034929}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e9f48fa94f8ee9418923928aeb9e11a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1195158343
 GameObject:
   m_ObjectHideFlags: 0

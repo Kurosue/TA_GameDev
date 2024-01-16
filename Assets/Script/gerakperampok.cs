@@ -8,7 +8,7 @@ public class gerakperampok : MonoBehaviour
     public float moveSpeed = 0.8f;
     public float returnSpeed = 0.5f;
     public float delayTime = 3f; // Waktu penundaan di forward position
-
+    public Animator animator;
     private bool isMovingForward = false;
 
     void FixedUpdate()
@@ -54,6 +54,18 @@ public class gerakperampok : MonoBehaviour
         // Start returning to the original position
         isMovingForward = false;
     }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            animator.SetBool("IsJumping",true);
+        }
+        else
+        {
+            animator.SetBool("IsJumping",false);
+        }
+     }
 }
 
 
