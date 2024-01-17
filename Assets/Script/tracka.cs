@@ -20,8 +20,8 @@ public class tracka : MonoBehaviour
     public float batasbawah;
     public float respawny;
     private float timer;
-    public float kecepatan = 2f;
-    public float percepatan = 0.1f;
+    public float kecepatan;
+    public float percepatan;
     public float perubahanpercepatan;
     public float xpohonkanan;
     public float xpohonkiri;
