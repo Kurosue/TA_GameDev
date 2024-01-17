@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColliderOnlyForCoin : MonoBehaviour
 {
 
-    private float _timer = 0f;
+    public float _timer = 0f;
     private bool _magnet = false;
     public GameManager _gameManager;
     Vector2 _defaultSize = new Vector2(0.01429209f, 0.0200274f);
