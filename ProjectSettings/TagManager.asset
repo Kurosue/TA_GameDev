@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Coin
-  - PowerUpS
   - Perampok
+  - Magnet
   layers:
   - Default
   - TransparentFX
