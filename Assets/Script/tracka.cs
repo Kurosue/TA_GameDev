@@ -20,6 +20,7 @@ public class tracka : MonoBehaviour
     public float respawny;
     public float kecepatan;
     public float timer = 0f;
+
     public float xpohonkanan;
     public float xpohonkiri;
     public float respawnypohon; 
@@ -94,6 +95,7 @@ public class tracka : MonoBehaviour
     void tambahcepat(){
         timer += Time.deltaTime;
         kecepatan = 0.5f*Mathf.Sqrt(timer);
+
     }
     void geraktrack(){
         pohonkananatas.transform.Translate(Vector3.down * kecepatan * Time.deltaTime);
