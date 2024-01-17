@@ -265,9 +265,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {fileID: 651960923}
   forwardPosition: {fileID: 1361017367}
-  moveSpeed: 1
-  returnSpeed: 0.006
-  delayTime: 3
+  moveSpeed: 0.5
+  returnSpeed: 0.003
+  delayTime: 5
   animator: {fileID: 235005027}
 --- !u!70 &235005025
 CapsuleCollider2D:
@@ -282,8 +282,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0023928464, y: 0}
-  m_Size: {x: 0.09778609, y: 0.16}
+  m_Offset: {x: -0.0023928464, y: 0.010035157}
+  m_Size: {x: 0.09778609, y: 0.24697128}
   m_Direction: 0
 --- !u!50 &235005026
 Rigidbody2D:
@@ -972,9 +972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {fileID: 800717189}
   forwardPosition: {fileID: 1864593067}
-  moveSpeed: 1
-  returnSpeed: 0.006
-  delayTime: 3
+  moveSpeed: 0.5
+  returnSpeed: 0.003
+  delayTime: 5
   animator: {fileID: 1013202431}
 --- !u!70 &1013202429
 CapsuleCollider2D:
@@ -989,8 +989,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003988087, y: 0}
-  m_Size: {x: 0.10735738, y: 0.16}
+  m_Offset: {x: -0.003988087, y: 0.008362579}
+  m_Size: {x: 0.10735738, y: 0.23693609}
   m_Direction: 0
 --- !u!50 &1013202430
 Rigidbody2D:
@@ -1136,9 +1136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalPosition: {fileID: 241064172}
   forwardPosition: {fileID: 2038112208}
-  moveSpeed: 1
-  returnSpeed: 0.006
-  delayTime: 3
+  moveSpeed: 0.5
+  returnSpeed: 0.003
+  delayTime: 5
   animator: {fileID: 1129034935}
 --- !u!70 &1129034933
 CapsuleCollider2D:
@@ -1153,8 +1153,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004785693, y: 0}
-  m_Size: {x: 0.09619086, y: 0.16}
+  m_Offset: {x: -0.004785693, y: 0.018397762}
+  m_Size: {x: 0.09619086, y: 0.24362622}
   m_Direction: 0
 --- !u!50 &1129034934
 Rigidbody2D:
