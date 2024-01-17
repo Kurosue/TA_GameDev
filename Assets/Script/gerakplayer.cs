@@ -8,11 +8,14 @@ public class gerakplayer : MonoBehaviour
     public float leftBound; // Batas kiri
     public float rightBound; // Batas kanan
     Rigidbody2D rb;
+    Rigidbody2D CoinCollrb;
     public GameManager _gameManager;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        CoinCollrb = transform.GetChild(0).GetComponent<Rigidbody2D>();
+
     }
     void Update()
     {
@@ -23,6 +26,7 @@ public class gerakplayer : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(0f, rb.velocity.y);
+            CoinCollrb.velocity = new Vector2(0f, CoinCollrb.velocity.y);
         }
     }
     void gerakhorizontal(){
@@ -31,6 +35,10 @@ public class gerakplayer : MonoBehaviour
         rb.velocity = new Vector2(movement.x * kecepatan, rb.velocity.y);   
         float clampedX = Mathf.Clamp(rb.position.x, leftBound, rightBound); 
         rb.position = new Vector2(clampedX, rb.position.y);
+
+        CoinCollrb.velocity = new Vector2(movement.x * kecepatan, CoinCollrb.velocity.y);   
+        float clampedY = Mathf.Clamp(CoinCollrb.position.x, leftBound, rightBound); 
+        CoinCollrb.position = new Vector2(clampedX, CoinCollrb.position.y);
 
     }
 }

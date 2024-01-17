@@ -264,6 +264,7 @@ MonoBehaviour:
   forwardPosition: {fileID: 1361017367}
   moveSpeed: 1
   returnSpeed: 0.006
+  delayTime: 3
 --- !u!1 &241064171
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +446,6 @@ MonoBehaviour:
   leftBound: -1.49
   rightBound: 1.49
   _gameManager: {fileID: 1603729223}
-  _rotationSpeed: 200
 --- !u!50 &378272779
 Rigidbody2D:
   serializedVersion: 4
@@ -509,12 +509,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439568470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3, y: 2.4, z: -7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.4, y: 2.5, z: -7.7460036}
+  m_LocalScale: {x: 1.106572, y: 1.106572, z: 1.106572}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &439568472
 SpriteRenderer:
@@ -815,6 +815,7 @@ MonoBehaviour:
   forwardPosition: {fileID: 1864593067}
   moveSpeed: 1
   returnSpeed: 0.006
+  delayTime: 3
 --- !u!1 &1129034929
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +917,7 @@ MonoBehaviour:
   forwardPosition: {fileID: 2038112208}
   moveSpeed: 1
   returnSpeed: 0.006
+  delayTime: 3
 --- !u!1 &1195158343
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,10 +951,10 @@ RectTransform:
   m_Father: {fileID: 1776520089}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44, y: -99}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -87, y: -83}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195158345
 MonoBehaviour:
@@ -976,12 +978,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1091,10 +1093,10 @@ RectTransform:
   m_Father: {fileID: 1776520089}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 123.2, y: -59}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -38, y: -29}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1597697546
 CanvasRenderer:
@@ -1126,18 +1128,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'score: '
+  m_Text: 0
 --- !u!1 &1603729221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1188,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776520085
 GameObject:
@@ -1236,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1451,7 +1453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackawal: {fileID: 5170709966898687481, guid: 8ba5cce3dfd5b3e4ca0e9c2248bca564, type: 3}
   gerakplayer: {fileID: 378272778}
-  track1: {fileID: 2881109893612808019, guid: 931e7220047e3f844a31af2e3fdc7667, type: 3}
+  track1: {fileID: 5170709966898687481, guid: 8ba5cce3dfd5b3e4ca0e9c2248bca564, type: 3}
   track2: {fileID: 5491730505831267484, guid: 2de43c5a908008e49a16749b7f812036, type: 3}
   track3: {fileID: 4083875897511736257, guid: f05cddffbe3c13a4a86df5d04736744c, type: 3}
   track4: {fileID: 6521313719351347000, guid: 8f1790ca84c189a46a4ca80cd2bca69c, type: 3}
@@ -1473,7 +1475,7 @@ MonoBehaviour:
   destroypohony: -5
   waktucepat: 1
   nyawa: 2
-  _gameManager: {fileID: 1603729223}
+  _jalan: {fileID: 1603729223}
 --- !u!4 &2104527873
 Transform:
   m_ObjectHideFlags: 0

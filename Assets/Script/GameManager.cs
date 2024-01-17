@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,18 +19,22 @@ public class GameManager : MonoBehaviour
     public GameObject _gameOverPage;
     private Text _hiScoreText;
 
+    private bool _gameOver = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.GetFloat("HighScore") == null){
+        if(!PlayerPrefs.HasKey("HighScore")){
             PlayerPrefs.SetFloat("HighScore", _hiScore);
             PlayerPrefs.Save();
         }
-        if(PlayerPrefs.GetFloat("Coin") == null){
+        else{
+            _hiScore = PlayerPrefs.GetFloat("HighScore");
+        }
+        if(!PlayerPrefs.HasKey("Coin")){
             PlayerPrefs.SetFloat("Coin", _coinCount);
             PlayerPrefs.Save();
         }
-        _scoreText.text = "score: " + _score;
     }
 
     // Update is called once per frame
@@ -38,7 +43,7 @@ public class GameManager : MonoBehaviour
         if(_gas)
         {
             _score += _trackScript.kecepatan * Time.deltaTime;
-            _scoreText.text = "score: " + (int)_score;
+            _scoreText.text = "" + (int)_score;
             if( _score > _hiScore){
                 _hiScore = _score;
                 PlayerPrefs.SetFloat("HighScore", _hiScore);
@@ -46,17 +51,20 @@ public class GameManager : MonoBehaviour
             }
             _coinText.text = "" + _coinCount;
         }
-        else{
+        if( !_gas && _gameOver )
+        {
             // Menjumlahkan total coin
             float _totalCoin = PlayerPrefs.GetFloat("Coin") + _coinCount;
-            PlayerPrefs.SetFloat("Coin", _coinCount);
+            PlayerPrefs.SetFloat("Coin", _totalCoin);
             PlayerPrefs.Save();
             
             // Memumculkan Page Game Over
-            Instantiate(_gameOverPage, new Vector3(0f, -0.75f, 0f), Quaternion.identity);
-            _hiScoreText = _gameOverPage.GetComponentInChildren<Text>();
-            _hiScoreText.text = "HighScore : " + (int)_hiScore;
+            GameObject gameOverInstance = Instantiate(_gameOverPage, new Vector3(0f, -0.75f, 0f), Quaternion.identity);
+            _hiScoreText = gameOverInstance.GetComponentInChildren<Text>();
+            _hiScoreText.text = "HighScore : " + (int)PlayerPrefs.GetFloat("HighScore");
+            _gameOver = false;
         }
-
     }
+
+
 }

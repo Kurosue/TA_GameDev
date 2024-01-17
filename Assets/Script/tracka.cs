@@ -19,11 +19,9 @@ public class tracka : MonoBehaviour
     public GameObject pohon3;
     public float batasbawah;
     public float respawny;
-    private float kecepatanawal = 2f;
-    private float percepatanawal = 0.1f;
     private float timer;
-    public float kecepatan;
-    public float percepatan;
+    public float kecepatan = 2f;
+    public float percepatan = 0.1f;
     public float perubahanpercepatan;
     public float xpohonkanan;
     public float xpohonkiri;

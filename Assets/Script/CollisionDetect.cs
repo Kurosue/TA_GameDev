@@ -37,7 +37,8 @@ public class CollisionDetect : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             Destroy(other.gameObject);
-            _trackScript.kecepatan = 1f;
+            _trackScript.kecepatan = 2f;
+            _trackScript.percepatan = 0.1f;
             ObstacleCollision();
             GameObject[] perampoks = GameObject.FindGameObjectsWithTag("Perampok");
 
@@ -49,10 +50,10 @@ public class CollisionDetect : MonoBehaviour
 
         }
 
-        if (other.CompareTag("Coin"))
+        if(other.CompareTag("Magnet"))
         {
             Destroy(other.gameObject);
-            _gameManager._coinCount += 1f;
+            transform.GetChild(0).GetComponent<ColliderOnlyForCoin>().MagnetCollision();
         }
     }
 
@@ -64,4 +65,6 @@ public class CollisionDetect : MonoBehaviour
             _gameManager._gas = false;
         }
     }
+
+
 }
