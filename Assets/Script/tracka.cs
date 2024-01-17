@@ -19,8 +19,7 @@ public class tracka : MonoBehaviour
     public float batasbawah;
     public float respawny;
     public float kecepatan;
-    public float percepatan;
-    public float perubahanpercepatan;
+    public float timer = 0f;
     public float xpohonkanan;
     public float xpohonkiri;
     public float respawnypohon; 
@@ -93,8 +92,8 @@ public class tracka : MonoBehaviour
         pohonkiriatas = Instantiate(pohonObject[randompohonIndexkiriatas], new Vector3(xpohonkiri,respawnypohon ,0f), Quaternion.identity);
     }
     void tambahcepat(){
-        percepatan /= perubahanpercepatan;
-        kecepatan += percepatan*Time.deltaTime;
+        timer += Time.deltaTime;
+        kecepatan = 0.5f*Mathf.Sqrt(timer);
     }
     void geraktrack(){
         pohonkananatas.transform.Translate(Vector3.down * kecepatan * Time.deltaTime);
