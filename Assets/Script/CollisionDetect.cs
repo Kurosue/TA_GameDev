@@ -32,7 +32,7 @@ public class CollisionDetect : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             Destroy(other.gameObject);
-            _trackScript.kecepatan = 1f;
+            _trackScript.kecepatan = 0.15f;
             ObstacleCollision();
             GameObject[] perampoks = GameObject.FindGameObjectsWithTag("Perampok");
 

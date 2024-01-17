@@ -18,8 +18,10 @@ public class tracka : MonoBehaviour
     public GameObject pohon3;
     public float batasbawah;
     public float respawny;
-    public float kecepatan;
+    public float kecepatan = 0.15f;
     public float timer = 0f;
+    public float percepatan = 0.15f;
+    public float _timerAccel = 0;
 
     public float xpohonkanan;
     public float xpohonkiri;
@@ -40,6 +42,7 @@ public class tracka : MonoBehaviour
     private int randomTrackIndexatas;
     private int randomTrackIndexbawah;
     public GameManager _jalan;
+    private float _currSpeed;
 
     void Start()
     {
@@ -49,6 +52,7 @@ public class tracka : MonoBehaviour
         Respawnpohonatas();
         Respawntrackbawah(0f, 8);
         Respawnpohonbawah(2.5f);
+        _currSpeed = kecepatan;
     }
     void FixedUpdate()
     {
@@ -93,8 +97,15 @@ public class tracka : MonoBehaviour
         pohonkiriatas = Instantiate(pohonObject[randompohonIndexkiriatas], new Vector3(xpohonkiri,respawnypohon ,0f), Quaternion.identity);
     }
     void tambahcepat(){
-        timer += Time.deltaTime;
-        kecepatan = 0.5f*Mathf.Sqrt(timer);
+        if(_currSpeed > kecepatan)
+        {
+            kecepatan += percepatan * Time.deltaTime;
+        }else
+        {
+            timer += Time.deltaTime;
+            kecepatan = 0.5f*Mathf.Sqrt(timer);
+            _currSpeed = kecepatan;
+        }
 
     }
     void geraktrack(){
