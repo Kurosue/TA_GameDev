@@ -544,8 +544,6 @@ MonoBehaviour:
   _playerHP: 2
   _trackScript: {fileID: 2104527872}
   _gameManager: {fileID: 1603729223}
-  _gerakperampok: {fileID: 235005024}
-  _perampok: {fileID: 158626920}
 --- !u!1 &439568470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,7 +1732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackawal: {fileID: 5170709966898687481, guid: 8ba5cce3dfd5b3e4ca0e9c2248bca564, type: 3}
-  gerakplayer: {fileID: 378272778}
   track1: {fileID: 5170709966898687481, guid: 8ba5cce3dfd5b3e4ca0e9c2248bca564, type: 3}
   track2: {fileID: 5491730505831267484, guid: 2de43c5a908008e49a16749b7f812036, type: 3}
   track3: {fileID: 4083875897511736257, guid: f05cddffbe3c13a4a86df5d04736744c, type: 3}
@@ -1749,14 +1746,12 @@ MonoBehaviour:
   batasbawah: -7.256
   respawny: 7.25
   kecepatan: 1
-  percepatan: 0.1
+  percepatan: 0.0002
   perubahanpercepatan: 1.01
   xpohonkanan: 2.45
   xpohonkiri: -4.5
   respawnypohon: 9.9
   destroypohony: -5
-  waktucepat: 1
-  nyawa: 2
   _jalan: {fileID: 1603729223}
 --- !u!4 &2104527873
 Transform:

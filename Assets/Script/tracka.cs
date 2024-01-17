@@ -5,7 +5,6 @@ using UnityEngine;
 public class tracka : MonoBehaviour
 {
     public GameObject trackawal;
-    public gerakplayer gerakplayer;
     public GameObject track1;
     public GameObject track2;
     public GameObject track3;
@@ -19,7 +18,6 @@ public class tracka : MonoBehaviour
     public GameObject pohon3;
     public float batasbawah;
     public float respawny;
-    private float timer;
     public float kecepatan;
     public float percepatan;
     public float perubahanpercepatan;
@@ -39,8 +37,6 @@ public class tracka : MonoBehaviour
     private int randompohonIndexkiriatas;
     private int randompohonIndexkananbawah;
     private int randompohonIndexkiribawah;
-    public float waktucepat;
-    public float nyawa;
     private int randomTrackIndexatas;
     private int randomTrackIndexbawah;
     public GameManager _jalan;
@@ -57,28 +53,34 @@ public class tracka : MonoBehaviour
     void FixedUpdate()
     {
         if(_jalan._gas)
-        {tambahcepat();
-        geraktrack();
-        if (trackatas.transform.position.y <= batasbawah){
-            Destroy(trackatas);
-            randomTrackIndexatas = Random.Range(0,8);
-            Respawntrackatas(randomTrackIndexatas);
+        {
+            tambahcepat();
+            geraktrack();
+            if (trackatas.transform.position.y <= batasbawah)
+            {
+                Destroy(trackatas);
+                randomTrackIndexatas = Random.Range(0,8);
+                Respawntrackatas(randomTrackIndexatas);
+            }
+            if (trackbawah.transform.position.y <=batasbawah)
+            {
+                Destroy(trackbawah);
+                randomTrackIndexbawah = Random.Range(0,8);
+                Respawntrackbawah(respawny, randomTrackIndexbawah);
+            }
+            if (pohonkananatas.transform.position.y <=destroypohony)
+            {
+                Destroy(pohonkananatas);
+                Destroy(pohonkiriatas);
+                Respawnpohonatas();
+            }
+            if (pohonkananbawah.transform.position.y <=destroypohony)
+            {
+                Destroy(pohonkiribawah);
+                Destroy(pohonkananbawah);
+                Respawnpohonbawah(respawnypohon);
+            }
         }
-        if (trackbawah.transform.position.y <=batasbawah){
-            Destroy(trackbawah);
-            randomTrackIndexbawah = Random.Range(0,8);
-            Respawntrackbawah(respawny, randomTrackIndexbawah);
-        }
-        if (pohonkananatas.transform.position.y <=destroypohony){
-            Destroy(pohonkananatas);
-            Destroy(pohonkiriatas);
-            Respawnpohonatas();
-        }
-        if (pohonkananbawah.transform.position.y <=destroypohony){
-            Destroy(pohonkiribawah);
-            Destroy(pohonkananbawah);
-            Respawnpohonbawah(respawnypohon);
-        }}
     }
     void Respawntrackatas(int randomTrackIndexatas)
     {
@@ -93,12 +95,6 @@ public class tracka : MonoBehaviour
     void tambahcepat(){
         percepatan /= perubahanpercepatan;
         kecepatan += percepatan*Time.deltaTime;
-        // timer += Time.deltaTime;
-        // if (timer >= waktucepat){
-        //     percepatan /= perubahanpercepatan;
-        //     kecepatan += percepatan;
-        //     timer = 0;
-        // }
     }
     void geraktrack(){
         pohonkananatas.transform.Translate(Vector3.down * kecepatan * Time.deltaTime);

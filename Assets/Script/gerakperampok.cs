@@ -5,11 +5,11 @@ public class gerakperampok : MonoBehaviour
 {
     public Transform originalPosition;
     public Transform forwardPosition;
-    public float moveSpeed = 0.8f;
-    public float returnSpeed = 0.5f;
-    public float delayTime = 3f; // Waktu penundaan di forward position
-    public Animator animator;
+    public float moveSpeed;
+    public float returnSpeed;
+    public float delayTime; // Waktu penundaan di forward position
     private bool isMovingForward = false;
+    public Animator animator;
 
     void FixedUpdate()
     {

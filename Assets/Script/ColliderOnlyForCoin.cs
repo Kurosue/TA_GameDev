@@ -7,7 +7,6 @@ public class ColliderOnlyForCoin : MonoBehaviour
 
     private float _timer = 0f;
     private bool _magnet = false;
-    private float _magnetForce = 10f;
     public GameManager _gameManager;
     Vector2 _defaultSize = new Vector2(0.01429209f, 0.0200274f);
     Vector2 _defaultOffset = new Vector2(6.697513e-05f, 0.2854659f);

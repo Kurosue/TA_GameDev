@@ -39,6 +39,5 @@ public class gerakplayer : MonoBehaviour
         CoinCollrb.velocity = new Vector2(movement.x * kecepatan, CoinCollrb.velocity.y);   
         float clampedY = Mathf.Clamp(CoinCollrb.position.x, leftBound, rightBound); 
         CoinCollrb.position = new Vector2(clampedX, CoinCollrb.position.y);
-        Debug.Log("asu");
     }
 }

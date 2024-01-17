@@ -6,15 +6,10 @@ public class CollisionDetect : MonoBehaviour
 {
     public float _playerHP = 2f;
     public tracka _trackScript;
-
     private float _timer = 0f;
     private float _timeDuration = 5f;
-
     public GameManager _gameManager;
 
-    public gerakperampok _gerakperampok;
-    public GameObject _perampok;
-    
     void Start()
     {
         
@@ -65,6 +60,4 @@ public class CollisionDetect : MonoBehaviour
             _gameManager._gas = false;
         }
     }
-
-
 }
