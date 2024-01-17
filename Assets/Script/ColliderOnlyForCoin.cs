@@ -12,7 +12,6 @@ public class ColliderOnlyForCoin : MonoBehaviour
     Vector2 _defaultSize = new Vector2(0.01429209f, 0.0200274f);
     Vector2 _defaultOffset = new Vector2(6.697513e-05f, 0.2854659f);
     BoxCollider2D CollCoin;
-    
     void Start()
     {
         CollCoin = GetComponent<BoxCollider2D>();
@@ -37,10 +36,7 @@ public class ColliderOnlyForCoin : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
-            Rigidbody2D coinRigidbody = other.GetComponent<Rigidbody2D>();
-            Vector2 direction = transform.position - other.transform.position;
-            direction.Normalize();
-            coinRigidbody.AddForce(direction * _magnetForce, ForceMode2D.Impulse);
+            other.GetComponent<CoinMove>()._tarik = true;
             _gameManager._coinCount += 1f;
         }
     }
