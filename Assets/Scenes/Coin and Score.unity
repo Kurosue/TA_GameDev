@@ -266,7 +266,7 @@ MonoBehaviour:
   originalPosition: {fileID: 651960923}
   forwardPosition: {fileID: 1361017367}
   moveSpeed: 1
-  returnSpeed: 0.006
+  returnSpeed: 0.003
   delayTime: 5
   animator: {fileID: 235005027}
 --- !u!50 &235005025
@@ -897,7 +897,7 @@ MonoBehaviour:
   originalPosition: {fileID: 800717189}
   forwardPosition: {fileID: 1864593067}
   moveSpeed: 1
-  returnSpeed: 0.006
+  returnSpeed: 0.003
   delayTime: 5
   animator: {fileID: 1013202431}
 --- !u!50 &1013202429
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   originalPosition: {fileID: 241064172}
   forwardPosition: {fileID: 2038112208}
   moveSpeed: 1
-  returnSpeed: 0.006
+  returnSpeed: 0.003
   delayTime: 5
   animator: {fileID: 1129034935}
 --- !u!50 &1129034933
