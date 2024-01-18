@@ -38,7 +38,7 @@ public class CollisionDetect : MonoBehaviour
         {
             _tabrak.Play();
             Destroy(other.gameObject);
-            _trackScript.kecepatan = 0.15f;
+            _trackScript.kecepatan = 0.75f;
             ObstacleCollision();
             GameObject[] perampoks = GameObject.FindGameObjectsWithTag("Perampok");
 

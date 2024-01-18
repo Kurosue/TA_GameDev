@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public float _coinCount = 0f;
 
     public bool _gas = true;
-    public GameObject _gameOverPage;
     private Text _hiScoreText;
 
     private bool _gameOver = true;
@@ -59,10 +58,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
             
             // Memumculkan Page Game Over
-            GameObject gameOverInstance = Instantiate(_gameOverPage, new Vector3(0f, -0.75f, 0f), Quaternion.identity);
-            _hiScoreText = gameOverInstance.GetComponentInChildren<Text>();
-            _hiScoreText.text = "HighScore : " + (int)PlayerPrefs.GetFloat("HighScore");
-            _gameOver = false;
+            SceneManager.LoadScene(2);
         }
     }
 
