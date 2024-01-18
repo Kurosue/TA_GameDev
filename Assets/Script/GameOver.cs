@@ -12,6 +12,8 @@ public class GameOver : MonoBehaviour
     }
     public void PlayAgain()
     {
+        PlayerPrefs.SetInt("Gas", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(1);
     }
     public void Home()
