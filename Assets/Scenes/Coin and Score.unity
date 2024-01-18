@@ -209,7 +209,7 @@ MonoBehaviour:
   _tergetPos: {x: 142.8, y: 52.6, z: 0}
   _homePos: {x: 142.8, y: -83.9, z: 0}
   _spawn: {fileID: 145080668}
-  _parent: {fileID: 0}
+  _parent: {fileID: 753161380}
 --- !u!114 &145080670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   _trackScript: {fileID: 2104527872}
   _gameManager: {fileID: 1603729223}
   _magnetPick: {fileID: 8300000, guid: 7ca2293958e94b2498afcc961bec27ed, type: 3}
-  _HUD: {fileID: 1322835233}
+  _HUD: {fileID: 753161380}
 --- !u!82 &378272781
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1280,7 +1280,7 @@ MonoBehaviour:
   _tergetPos: {x: 46.20001, y: 50.6, z: 0}
   _homePos: {x: 46.20001, y: -86.1, z: 0}
   _spawn: {fileID: 145080668}
-  _parent: {fileID: 0}
+  _parent: {fileID: 753161380}
 --- !u!114 &524024863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1633,7 +1633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &753161381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2929,7 +2929,7 @@ MonoBehaviour:
   _tergetPos: {x: 123.1, y: 51.00888, z: 0}
   _homePos: {x: 123.1, y: -85.2, z: 0}
   _spawn: {fileID: 145080668}
-  _parent: {fileID: 0}
+  _parent: {fileID: 753161380}
 --- !u!114 &1535177489
 MonoBehaviour:
   m_ObjectHideFlags: 0
