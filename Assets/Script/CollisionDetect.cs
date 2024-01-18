@@ -12,6 +12,7 @@ public class CollisionDetect : MonoBehaviour
     public AudioSource _magnetPick;
     public AudioSource _truckJalan;
     public AudioSource _tabrak;
+    public AudioSource _Jalan;
     public GameObject _HUD;
     private float _SoundTiemr = 0f;
     void Update()
@@ -32,9 +33,10 @@ public class CollisionDetect : MonoBehaviour
             }
 
         // Update Volume
-        _truckJalan.volume = PlayerPrefs.GetFloat("SFXVol");
-        _magnetPick.volume = PlayerPrefs.GetFloat("SFXVol");
-        _tabrak.volume = PlayerPrefs.GetFloat("SFXVol");
+        _truckJalan.volume = (PlayerPrefs.GetFloat("SFXVol") * 0.4f) / 0.4f;
+        _magnetPick.volume = (PlayerPrefs.GetFloat("SFXVol") * 0.4f) / 0.4f;
+        _tabrak.volume = (PlayerPrefs.GetFloat("SFXVol") * 0.4f) / 0.4f;
+        _Jalan.volume = (PlayerPrefs.GetFloat("SFXVol") * 0.4f) / 0.4f;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

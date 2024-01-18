@@ -23,6 +23,7 @@ public class ColliderOnlyForCoin : MonoBehaviour
 
     void Update()
     {
+        _coinSFX.volume = (PlayerPrefs.GetFloat("SFXVol") * 0.6f) / 0.6f;
         if(_magnet)
         {
             _timer += Time.deltaTime;

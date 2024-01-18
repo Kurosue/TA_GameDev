@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
     public AudioSource _musik;
 
     void Update(){
-        _musik.volume = PlayerPrefs.GetFloat("MusVol");
+        _musik.volume = (PlayerPrefs.GetFloat("MusVol") * 0.5f) / 0.5f;
     }
     public void PlayAgain()
     {
