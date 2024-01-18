@@ -9,10 +9,14 @@ public class gerakperampok : MonoBehaviour
     public float returnSpeed;
     public float delayTime; // Waktu penundaan di forward position
     private bool isMovingForward = false;
+    public tracka speed;
     public Animator animator;
-
     void FixedUpdate()
     {
+        // animator = GetComponent<Animator>();
+        float Speed = speed.kecepatan; // gunakan speed langsung jika kecepatan sudah ada di komponen tersebut
+        animator.SetFloat("Speed", Speed);
+
         if (isMovingForward)
         {
             MoveToForwardPosition();
