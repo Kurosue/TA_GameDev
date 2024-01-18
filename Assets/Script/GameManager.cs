@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public tracka _trackScript;
     public float _coinCount = 0f;
 
-    public bool _gas = true;
+    public int _gas = 1;
     private Text _hiScoreText;
 
     private bool _gameOver = true;
@@ -36,8 +36,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _gas = PlayerPrefs.GetInt("Gas");
         _musik.volume = PlayerPrefs.GetFloat("MusVol");
-        if(_gas)
+        if(_gas == 1)
         {
             _score += _trackScript.kecepatan * Time.deltaTime;
             _scoreText.text = "" + (int)_score;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
             }
             _coinText.text = "" + _coinCount;
         }
-        if( !_gas && _gameOver )
+        if( _gas == 0 && _gameOver )
         {
             // Menjumlahkan total coin
             float _totalCoin = PlayerPrefs.GetFloat("Coin") + _coinCount;

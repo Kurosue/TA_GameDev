@@ -15,6 +15,10 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("Coin", 0f);
             PlayerPrefs.Save();
         }
+        if(!PlayerPrefs.HasKey("Gas")){
+            PlayerPrefs.SetInt("Gas", 1);
+            PlayerPrefs.Save();
+        }
         if(!PlayerPrefs.HasKey("MagnetTimer")){
             PlayerPrefs.SetFloat("MagnetTimer", 15f);
             PlayerPrefs.Save();
@@ -36,6 +40,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Acumalaka");
         SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("Gas", 1);
     }
 
     public void QuitGame ()
