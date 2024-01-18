@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private bool _gameOver = true;
 
     // Start is called before the first frame update
+    public AudioSource _musik;
     void Start()
     {
         if(!PlayerPrefs.HasKey("HighScore")){
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _musik.volume = PlayerPrefs.GetFloat("MusVol");
         if(_gas)
         {
             _score += _trackScript.kecepatan * Time.deltaTime;

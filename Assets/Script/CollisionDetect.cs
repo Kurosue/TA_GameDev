@@ -32,6 +32,9 @@ public class CollisionDetect : MonoBehaviour
             }
 
         // Update Volume
+        _truckJalan.volume = PlayerPrefs.GetFloat("SFXVol");
+        _magnetPick.volume = PlayerPrefs.GetFloat("SFXVol");
+        _tabrak.volume = PlayerPrefs.GetFloat("SFXVol");
     }
 
     public void OnTriggerEnter2D(Collider2D other)

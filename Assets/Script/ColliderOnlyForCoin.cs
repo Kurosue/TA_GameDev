@@ -12,6 +12,7 @@ public class ColliderOnlyForCoin : MonoBehaviour
     Vector2 _defaultOffset = new Vector2(6.697513e-05f, 0.2854659f);
     BoxCollider2D CollCoin;
     AudioSource _coinpick;
+    public AudioSource _coinSFX;
     void Start()
     {
         _coinpick = GetComponent<AudioSource>();
@@ -35,6 +36,7 @@ public class ColliderOnlyForCoin : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        _coinSFX.volume = PlayerPrefs.GetFloat("SFXVol");
         if (other.CompareTag("Coin"))
         {
             other.GetComponent<CoinMove>()._tarik = true;
