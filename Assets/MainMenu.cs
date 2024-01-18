@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public AudioSource _musik;
+    public Text _coinTXT;
 
     void Start(){
+
         if(!PlayerPrefs.HasKey("Coin")){
             PlayerPrefs.SetFloat("Coin", 0f);
             PlayerPrefs.Save();
@@ -26,6 +29,7 @@ public class MainMenu : MonoBehaviour
         }
     }
     void Update(){
+        _coinTXT.text = "" + (int)PlayerPrefs.GetFloat("Coin");
         _musik.volume = PlayerPrefs.GetFloat("MusVol");
     }
     public void PlayGame ()
@@ -43,6 +47,9 @@ public class MainMenu : MonoBehaviour
     public void IncreaseButton(){
         float _curr = PlayerPrefs.GetFloat("MagnetTimer");
         if(PlayerPrefs.GetFloat("Coin") >= 10000f){
+            float _minusCoin = PlayerPrefs.GetFloat("Coin") - 10000f;
+            PlayerPrefs.SetFloat("Coin", _minusCoin);
+            PlayerPrefs.Save();
             _curr += 5f;
             PlayerPrefs.SetFloat("MagnetTimer", _curr);
             PlayerPrefs.Save();
