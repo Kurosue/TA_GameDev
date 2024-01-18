@@ -9,6 +9,7 @@ public class CollisionDetect : MonoBehaviour
     private float _timer = 0f;
     private float _timeDuration = 5f;
     public GameManager _gameManager;
+    public GameObject _magnetHUD;
 
     void Start()
     {
@@ -47,6 +48,10 @@ public class CollisionDetect : MonoBehaviour
         if(other.CompareTag("Magnet"))
         {
             Destroy(other.gameObject);
+            GameObject targetObject = GameObject.FindWithTag("MagnetTiemr");
+            if(targetObject == null){
+                Instantiate(_magnetHUD, new Vector3(0f, 0f,0f), Quaternion.identity);
+            }
             transform.GetChild(0).GetComponent<ColliderOnlyForCoin>().MagnetCollision();
         }
     }

@@ -9,6 +9,7 @@ TagManager:
   - Perampok
   - Magnet
   - CoinColl
+  - MagnetTiemr
   layers:
   - Default
   - TransparentFX
