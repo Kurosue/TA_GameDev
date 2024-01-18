@@ -200,7 +200,7 @@ Transform:
   - {fileID: 1864593067}
   - {fileID: 2038112208}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235005021
 GameObject:
@@ -563,7 +563,7 @@ Transform:
   m_Children:
   - {fileID: 684082968}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &378272777
 PolygonCollider2D:
@@ -664,6 +664,7 @@ MonoBehaviour:
   _gameManager: {fileID: 1603729223}
   _magnetHUD: {fileID: 1250043964909305684, guid: f6beea3d780687e428fe369ee478fea4, type: 3}
   _magnetPick: {fileID: 8300000, guid: 7ca2293958e94b2498afcc961bec27ed, type: 3}
+  _HUD: {fileID: 0}
 --- !u!82 &378272781
 AudioSource:
   m_ObjectHideFlags: 0
@@ -785,12 +786,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439568470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.459576, y: 3.6983886, z: -7.7603087}
-  m_LocalScale: {x: 1.106572, y: 1.106572, z: 1.106572}
+  m_LocalPosition: {x: 4.38, y: 2.52, z: -5.016135}
+  m_LocalScale: {x: 0.71659076, y: 0.71659076, z: 0.71659076}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1950409153}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &439568472
 SpriteRenderer:
@@ -2533,7 +2534,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776520085
 GameObject:
@@ -2697,7 +2698,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1776520089}
-  - {fileID: 439568471}
   m_Father: {fileID: 1322835237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2767,7 +2767,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2038112207
 GameObject:
