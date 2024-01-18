@@ -9,13 +9,14 @@ public class HUDMovement : MonoBehaviour
     public Vector3 _tergetPos;
     public Vector3 _homePos;
     public MagnetTimer _spawn;
+    public GameObject _parent;
     // Start is called before the first frame update
     void Start()
     {
         _hUD = GetComponent<Image>();
     }
 
-    // Update is called once per frame
+    // Update is called once per 
     void Update()
     {
         if(_spawn._spawn)
@@ -29,7 +30,7 @@ public class HUDMovement : MonoBehaviour
             {
                 if (transform.root != null)
                 {
-                    Destroy(transform.root.gameObject);
+                    _parent.SetActive(false);
                 }
             }
         }
