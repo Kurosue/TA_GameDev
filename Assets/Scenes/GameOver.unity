@@ -401,6 +401,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -315
       objectReference: {fileID: 0}
+    - target: {fileID: 1662847396630777795, guid: b553281a6f8ef8b429343c2f4b391374, type: 3}
+      propertyPath: _musik
+      value: 
+      objectReference: {fileID: 1744084516}
     - target: {fileID: 5907035611786505788, guid: b553281a6f8ef8b429343c2f4b391374, type: 3}
       propertyPath: m_SizeDelta.x
       value: 762.0337
