@@ -71,7 +71,8 @@ public class CollisionDetect : MonoBehaviour
         _playerHP--;
         if (_playerHP <= 0)
         {
-            _gameManager._gas = false;
+            PlayerPrefs.SetInt("Gas", 0);
+            PlayerPrefs.Save();
         }
     }
 }

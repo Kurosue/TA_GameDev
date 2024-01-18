@@ -19,7 +19,7 @@ public class gerakplayer : MonoBehaviour
     }
     void Update()
     {
-        if(_gameManager._gas)
+        if(_gameManager._gas == 1)
         {    
             gerakhorizontal();  
         }

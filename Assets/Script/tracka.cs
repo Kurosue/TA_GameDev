@@ -56,9 +56,10 @@ public class tracka : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(_jalan._gas)
+        if(_jalan._gas == 1)
         {
             tambahcepat();
+            Debug.Log("oaisjdfjiaosf");
             geraktrack();
             if (trackatas.transform.position.y <= batasbawah)
             {
