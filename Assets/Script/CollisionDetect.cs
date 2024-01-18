@@ -9,16 +9,18 @@ public class CollisionDetect : MonoBehaviour
     private float _timer = 0f;
     private float _timeDuration = 5f;
     public GameManager _gameManager;
-    AudioSource _audio;
-    public AudioClip _magnetPick;
+    public AudioSource _magnetPick;
+    public AudioSource _truckJalan;
+    public AudioSource _tabrak;
     public GameObject _HUD;
-    void Start()
-    {
-        _audio = GetComponent<AudioSource>();
-        _audio.clip = _magnetPick;
-    }
+    private float _SoundTiemr = 0f;
     void Update()
     {
+        _SoundTiemr += Time.deltaTime;
+        if(_SoundTiemr >= 4.5f)
+        {
+            _truckJalan.Play();
+        }
         if(_playerHP < 2){
             _timer += Time.deltaTime;
 
@@ -34,6 +36,7 @@ public class CollisionDetect : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
+            _tabrak.Play();
             Destroy(other.gameObject);
             _trackScript.kecepatan = 0.15f;
             ObstacleCollision();
@@ -50,7 +53,7 @@ public class CollisionDetect : MonoBehaviour
         if(other.CompareTag("Magnet"))
         {
             Destroy(other.gameObject);
-            _audio.Play();
+            _magnetPick.Play();
             _HUD.SetActive(true);
             transform.GetChild(0).GetComponent<ColliderOnlyForCoin>().MagnetCollision();
         }
