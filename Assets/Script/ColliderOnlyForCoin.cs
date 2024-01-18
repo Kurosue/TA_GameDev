@@ -11,8 +11,10 @@ public class ColliderOnlyForCoin : MonoBehaviour
     Vector2 _defaultSize = new Vector2(0.01429209f, 0.0200274f);
     Vector2 _defaultOffset = new Vector2(6.697513e-05f, 0.2854659f);
     BoxCollider2D CollCoin;
+    AudioSource _coinpick;
     void Start()
     {
+        _coinpick = GetComponent<AudioSource>();
         CollCoin = GetComponent<BoxCollider2D>();
         CollCoin.size = _defaultSize;
         CollCoin.offset = _defaultOffset;
@@ -36,7 +38,12 @@ public class ColliderOnlyForCoin : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             other.GetComponent<CoinMove>()._tarik = true;
-            _gameManager._coinCount += 1f;
+            if (Vector3.Distance(other.transform.position, transform.position) < 0.5f)
+            {
+                _coinpick.Play();
+                Destroy(gameObject);
+                _gameManager._coinCount += 1f;
+            }
         }
     }
 

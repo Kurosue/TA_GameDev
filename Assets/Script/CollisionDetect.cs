@@ -10,10 +10,13 @@ public class CollisionDetect : MonoBehaviour
     private float _timeDuration = 5f;
     public GameManager _gameManager;
     public GameObject _magnetHUD;
-
+    AudioSource _audio;
+    public AudioClip _magnetPick;
+    public GameObject _HUD;
     void Start()
     {
-        
+        _audio = GetComponent<AudioSource>();
+        _audio.clip = _magnetPick;
     }
     void Update()
     {
@@ -48,9 +51,10 @@ public class CollisionDetect : MonoBehaviour
         if(other.CompareTag("Magnet"))
         {
             Destroy(other.gameObject);
+            _audio.Play();
             GameObject targetObject = GameObject.FindWithTag("MagnetTiemr");
             if(targetObject == null){
-                Instantiate(_magnetHUD, new Vector3(0f, 0f,0f), Quaternion.identity);
+                Instantiate(_magnetHUD, new Vector3(0f, 0f,0f), Quaternion.identity, _HUD.transform);
             }
             transform.GetChild(0).GetComponent<ColliderOnlyForCoin>().MagnetCollision();
         }
