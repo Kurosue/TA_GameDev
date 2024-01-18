@@ -18,11 +18,10 @@ public class CoinMove : MonoBehaviour
         {
             Vector3 targetPosition = new Vector3(_truk.transform.position.x, _truk.transform.position.y, _truk.transform.position.z);
             transform.position = Vector3.Lerp(transform.position, targetPosition, _magnetForce * Time.deltaTime);
-            // if (Vector3.Distance(transform.position, _truk.transform.position) < 0.5f)
-            // {
-            //     _coinSFX.Play();
-            //     Destroy(gameObject);
-            // }
+            if (Vector3.Distance(transform.position, _truk.transform.position) < 0.5f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

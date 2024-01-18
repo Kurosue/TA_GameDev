@@ -38,12 +38,9 @@ public class ColliderOnlyForCoin : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             other.GetComponent<CoinMove>()._tarik = true;
-            if (Vector3.Distance(other.transform.position, transform.position) < 0.5f)
-            {
-                _coinpick.Play();
-                Destroy(gameObject);
-                _gameManager._coinCount += 1f;
-            }
+            _coinpick.Play();
+            _gameManager._coinCount += 1f;
+
         }
     }
 
