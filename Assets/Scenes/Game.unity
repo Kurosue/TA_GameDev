@@ -933,9 +933,9 @@ GameObject:
   - component: {fileID: 378272779}
   - component: {fileID: 378272780}
   - component: {fileID: 378272781}
-  - component: {fileID: 378272784}
   - component: {fileID: 378272783}
   - component: {fileID: 378272782}
+  - component: {fileID: 378272784}
   m_Layer: 6
   m_Name: trukplayer
   m_TagString: Player
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   _magnetPick: {fileID: 378272781}
   _truckJalan: {fileID: 378272783}
   _tabrak: {fileID: 378272784}
+  _Jalan: {fileID: 378272782}
   _HUD: {fileID: 753161380}
 --- !u!82 &378272781
 AudioSource:
@@ -1436,9 +1437,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d654085fc8665774c93c14d6eeec5e5c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5f8d0898b6c0edc488a85ac82d14bc15, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4499,6 +4500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOver: {fileID: 1846008095}
+  _musik: {fileID: 0}
 --- !u!1 &1864593066
 GameObject:
   m_ObjectHideFlags: 0
