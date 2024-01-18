@@ -26,12 +26,11 @@ public class HUDMovement : MonoBehaviour
         else{
             _hUD.rectTransform.anchoredPosition = Vector3.Lerp(_hUD.rectTransform.anchoredPosition, _homePos, 2f * Time.deltaTime);
             Vector3 _3d = _hUD.rectTransform.anchoredPosition;
-            if( _3d.y < 0f)
+            if( _3d.y < -30f)
             {
-                if (transform.root != null)
-                {
-                    _parent.SetActive(false);
-                }
+                _spawn._spawn = true;
+                _parent.SetActive(false);
+
             }
         }
     }
