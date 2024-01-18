@@ -9,13 +9,14 @@ public class HUDMovement : MonoBehaviour
     public Vector3 _tergetPos;
     public Vector3 _homePos;
     public MagnetTimer _spawn;
+    public GameObject _parent;
     // Start is called before the first frame update
     void Start()
     {
         _hUD = GetComponent<Image>();
     }
 
-    // Update is called once per frame
+    // Update is called once per 
     void Update()
     {
         if(_spawn._spawn)
@@ -25,12 +26,11 @@ public class HUDMovement : MonoBehaviour
         else{
             _hUD.rectTransform.anchoredPosition = Vector3.Lerp(_hUD.rectTransform.anchoredPosition, _homePos, 2f * Time.deltaTime);
             Vector3 _3d = _hUD.rectTransform.anchoredPosition;
-            if( _3d.y < 0f)
+            if( _3d.y < -30f)
             {
-                if (transform.root != null)
-                {
-                    Destroy(transform.root.gameObject);
-                }
+                _spawn._spawn = true;
+                _parent.SetActive(false);
+
             }
         }
     }
