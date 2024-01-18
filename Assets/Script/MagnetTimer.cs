@@ -22,6 +22,7 @@ public class MagnetTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _maxTime = PlayerPrefs.GetFloat("MagnetTimer");
         _timer = _timerM.GetComponent<ColliderOnlyForCoin>()._timer;
         _timeLeft = _maxTime - _timer;
         if(_fill)

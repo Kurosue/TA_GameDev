@@ -8,6 +8,14 @@ public class MainMenu : MonoBehaviour
     public AudioSource _musik;
 
     void Start(){
+        if(!PlayerPrefs.HasKey("Coin")){
+            PlayerPrefs.SetFloat("Coin", 0f);
+            PlayerPrefs.Save();
+        }
+        if(!PlayerPrefs.HasKey("MagnetTimer")){
+            PlayerPrefs.SetFloat("MagnetTimer", 15f);
+            PlayerPrefs.Save();
+        }
         if(!PlayerPrefs.HasKey("MusVol")){
             PlayerPrefs.SetFloat("MusVol", 1);
             PlayerPrefs.Save();
@@ -31,5 +39,14 @@ public class MainMenu : MonoBehaviour
         Debug.Log("QUIT");
         Application.Quit();
 
+    }
+    public void IncreaseButton(){
+        float _curr = PlayerPrefs.GetFloat("MagnetTimer");
+        if(PlayerPrefs.GetFloat("Coin") >= 10000f){
+            _curr += 5f;
+            PlayerPrefs.SetFloat("MagnetTimer", _curr);
+            PlayerPrefs.Save();
+
+        }
     }
 }

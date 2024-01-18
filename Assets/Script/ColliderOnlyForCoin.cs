@@ -27,7 +27,7 @@ public class ColliderOnlyForCoin : MonoBehaviour
         if(_magnet)
         {
             _timer += Time.deltaTime;
-            if(_timer >= 15f)
+            if(_timer >= PlayerPrefs.GetFloat("MagnetTimer"))
             {
                 BackToSize();
                 _magnet = false;

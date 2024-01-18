@@ -31,10 +31,6 @@ public class GameManager : MonoBehaviour
         else{
             _hiScore = PlayerPrefs.GetFloat("HighScore");
         }
-        if(!PlayerPrefs.HasKey("Coin")){
-            PlayerPrefs.SetFloat("Coin", _coinCount);
-            PlayerPrefs.Save();
-        }
     }
 
     // Update is called once per frame
@@ -63,6 +59,4 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
-
-
 }
